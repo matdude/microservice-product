@@ -3,6 +3,21 @@ spring:
     name: product
   profiles:
     active: production
+  datasource:
+    url: jdbc:mysql://localhost:3306/creditinfo?serverTimezone=Europe/Warsaw&useSSL=False&allowPublicKeyRetrieval=true
+    username: creditinfo
+    password: creditinfo
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
 
 eureka:
   client: ${eureka-client}
+
+server:
+  port: 8082
+
+eureka-client:
+  fetchRegistry: true
